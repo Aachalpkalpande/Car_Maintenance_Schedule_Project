@@ -1,0 +1,138 @@
+{
+  "info": {
+    "name": "Car Maintenance API",
+    "_postman_id": "a1f5c2a0-1234-5678-9876-abcdef123456",
+    "description": "Postman collection for Car Maintenance Schedule API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"John Doe\",\n    \"phone_no\": \"9876543210\"\n}"
+        },
+        "url": {
+          "raw": "https://apicars.prisms.in/user/create",
+          "protocol": "https",
+          "host": ["apicars", "prisms", "in"],
+          "path": ["user", "create"]
+        }
+      }
+    },
+    {
+      "name": "User - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://apicars.prisms.in/user/getall",
+          "protocol": "https",
+          "host": ["apicars", "prisms", "in"],
+          "path": ["user", "getall"]
+        }
+      }
+    },
+    {
+      "name": "User - Get By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://apicars.prisms.in/user/get/1",
+          "protocol": "https",
+          "host": ["apicars", "prisms", "in"],
+          "path": ["user", "get", "1"]
+        }
+      }
+    },
+    {
+      "name": "Car - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"model\": \"Maruti 800\",\n    \"color\": \"Green\",\n    \"ownerid\": 1,\n    \"purchase_date\": \"2019-10-23\"\n}"
+        },
+        "url": {
+          "raw": "https://apicars.prisms.in/car/create",
+          "protocol": "https",
+          "host": ["apicars", "prisms", "in"],
+          "path": ["car", "create"]
+        }
+      }
+    },
+    {
+      "name": "Car - Get All by User",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://apicars.prisms.in/car/getall?userid=1",
+          "protocol": "https",
+          "host": ["apicars", "prisms", "in"],
+          "path": ["car", "getall"],
+          "query": [
+            { "key": "userid", "value": "1" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Car - Get By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://apicars.prisms.in/car/get/1",
+          "protocol": "https",
+          "host": ["apicars", "prisms", "in"],
+          "path": ["car", "get", "1"]
+        }
+      }
+    },
+    {
+      "name": "Servicing - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"carid\": 1,\n    \"servicing_date\": \"2019-12-30\",\n    \"status\": \"Finished\"\n}"
+        },
+        "url": {
+          "raw": "https://apicars.prisms.in/servicing/create",
+          "protocol": "https",
+          "host": ["apicars", "prisms", "in"],
+          "path": ["servicing", "create"]
+        }
+      }
+    },
+    {
+      "name": "Servicing - Get All for Car",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://apicars.prisms.in/servicing/getall?carid=1",
+          "protocol": "https",
+          "host": ["apicars", "prisms", "in"],
+          "path": ["servicing", "getall"],
+          "query": [
+            { "key": "carid", "value": "1" }
+          ]
+        }
+      }
+    }
+  ]
+}
