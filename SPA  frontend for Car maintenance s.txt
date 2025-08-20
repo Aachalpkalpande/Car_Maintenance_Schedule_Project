@@ -1,0 +1,157 @@
+SPA  frontend for Car maintenance schedule 
+Your task is to build a simple frontend for a car maintenance schedule web app. The frontend must be built using React, Redux and Redux-Saga
+
+Description:
+	This is a web app to keep track of car maintenance record in a car garage. You’ll be given a python/flask based backend with following APIs:
+Create user
+Get all users
+Get one user by id
+
+Create a car record linked with a user
+Get all car records for a user
+Get records for one specific car by id
+
+Create a servicing record for a car
+Get all servicing records for a car
+
+API details on the next page. We’ll provide backend code for development and testing.
+
+Your task is to build a SPA with 2 tabs/pages. 1. for user management 2. for car and servicing records management. 
+
+Both pages should have a  form for creating new record and list all records. On clicking a record, its details should be expanded. 
+
+There should be a button/link to go from user to car details page and vice-a-versa.
+
+Styling:
+	You need not spend too much effort on styling. Just a basic styling with proper alignment is sufficient.
+API details: (https://apicars.prisms.in)
+All APIs to be received and sent as JSON data
+/user/create [POST]
+Desc: Create new user
+Parameters:
+name
+phone_no
+Returns:
+{‘error’: 
+0 if no error, 
+1 if error, 
+‘error-message’: 
+error message if error, 
+“” if no error}
+				
+/user/getall [GET]
+Desc: get list of all users
+Parameters:
+Returns:
+{‘error’: 
+0 if no error, 
+1 if error, 
+‘error-message’: 
+error message if error, 
+“” if no error”,
+‘Users’: [
+	{‘id’: 1, ‘name’: ‘abc’, ‘phone-number’:  123123}
+]}
+
+/user/get/<id> [GET]
+Desc: get user with id: <id>
+Parameters:
+Returns:
+{‘error’: 
+0 if no error, 
+1 if error, 
+‘error-message’: 
+error message if error, 
+“” if no error”,
+‘User’: 	{‘id’: <id>, ‘name’: ‘abc’, ‘phone-number’:  123123, 
+‘Cars’: [
+	{‘Id’: 1,
+‘Model’:  ‘Maruti 800’,
+‘Color’: ‘Green’,
+‘Purchase-date’: 23-10-2019}
+]}
+}
+
+/car/create [POST]
+Desc: Create new car
+Parameters:
+model
+color
+ownerid (userid)
+purchase_date
+Returns:
+{‘error’: 
+0 if no error, 
+1 if error, 
+‘error-message’: 
+error message if error, 
+“” if no error”}
+				
+/car/getall [GET]
+Desc: get list of all cars for a user
+Parameters:
+userid
+Returns:
+{‘error’: 
+0 if no error, 
+1 if error, 
+‘error-message’: 
+error message if error, 
+“” if no error”,
+‘Cars’: [
+	{‘Id’: 1,
+‘Model’:  ‘Maruti 800’,
+‘Color’: ‘Green’,
+‘Purchase-date’: 23-10-2019}
+]}
+
+/car/get/<id> [GET]
+Desc: get car with id: <id>
+Parameters:
+Returns:
+{‘error’: 
+0 if no error, 
+1 if error, 
+‘error-message’: 
+error message if error, 
+“” if no error”,
+‘Car’: 	{‘id’: <id>, ‘model’: ‘Maruti 800’, ‘purchase-date’: 23-10-2019, 
+‘Servicing’: [
+	{‘Id’: 1,
+‘servicing-date’: 30-12-2019,
+‘Status’: ‘Finished’
+}
+]}
+}
+
+/servicing/create [POST]
+Desc: Create new servicing entry
+Parameters:
+carid
+servicing_date
+status
+Returns:
+{‘error’: 
+0 if no error, 
+1 if error, 
+‘error-message’: 
+error message if error, 
+“” if no error”}
+				
+/servicing/getall [GET]
+Desc: get list of all servicings for a car
+Parameters:
+carid
+Returns:
+{‘error’: 
+0 if no error, 
+1 if error, 
+‘error-message’: 
+error message if error, 
+“” if no error”,
+‘servicings’: [
+	{‘Id’: 1,
+‘servicing-date’:30-12-2019,
+‘Status’: ‘Finished’}
+]}
+
